@@ -72,7 +72,9 @@ body {
 
 .heading-primary {
     color: #fff;
-    
+    /* ANIMATIONS */
+    animation-name: transparentFadeIn; /* Selecting custom animations from @keyframes in this css */
+    animation-duration: 2.5s; /* duration-speed of the animation */
 }
 
 .heading-primary-main {
@@ -102,4 +104,17 @@ body {
     letter-spacing: 6px;
     line-height: 16px;
     text-transform: uppercase;
+}
+
+/* ANIMATIONS */
+
+@keyframes transparentFadeIn {
+    0% {
+        opacity: 0; /* start transparent */
+        transform: translateY(-10px); /* start up 10px */
+    }
+    100% {
+        opacity: 1; /* end visible */
+        transform: translate(0); /* end at actual initial position */
+    }
 }
