@@ -9,21 +9,97 @@ COLOR PALETTE:
     Dark blue:      #
 
     Light grey:     #
-    Medium grey:    #
-    Dark grey:      #
+    Medium grey:    #777
+    Dark grey:      #21242C
 
-    Yellow highlights: #21242C
+    Yellow highlights: #FED731
 
 */
 
 
-/* BASIC RESET */
 * {
+    /* BASIC RESET */
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* makes the browsers calculate the borders and padding as part of the element's width/height */
+    /* border: 1px solid red; */
 }
 
 body {
+    /* BASIC RESET, IN BODY FOR INHERITANCE PURPOSES */
+    font-family: "Montserrat", sans-serif; /* from google fonts */
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
 
+}
+
+.header {
+    height: 95vh; /* 95% of view height, helped by the html meta tag "viewport" */
+    background-image: linear-gradient(to right bottom,rgba(41, 46, 56, 0.85), rgba(23, 26, 32, 0.85)), url(../assets/img/header_bg_simon_champi.jpg);
+    background-size: cover; /* whatever the size of the div, it will fit the image inside */
+    background-position: top; /* make sure the top of the image always stay visible */
+
+    position: relative; /* makes children div with position absolute count top-left-right-bottom px relative to this parent div */
+
+    clip-path: polygon( 0 0, 
+                        100% 0, 
+                        100% 75vh, 
+                        0 100%
+                ); /* Editing the polygon out of the div (x y, x y, x y...) */
+
+}
+
+.logo-box {
+    position: absolute; /* position the logo-box div relative to .header + 40px */
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 100px; /* define logo image size */
+}
+
+.text-box {
+    position: absolute; /* position relative to .header */
+    top: 40%;
+    left: 50%; /* % is in relation to parent element */
+    transform: translate(-50%, -50%); /* % in relation with to the element itself (this .text-box) */
+    text-align: center;
+    
+}
+
+.heading-primary {
+    color: #fff;
+    
+}
+
+.heading-primary-main {
+    text-transform: uppercase;
+    display: block; /* since span element by default are inline, we change to block so it occupy the whole width and break the line for the next element */ 
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    line-height: 20px;
+    
+}
+
+.heading-primary-sub {
+    color: #FED731;
+    display: block; 
+    font-size: 80px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    
+}
+
+.heading-secondary {
+    color: rgb(122, 137, 171);
+    display: block; 
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    line-height: 16px;
+    text-transform: uppercase;
 }
