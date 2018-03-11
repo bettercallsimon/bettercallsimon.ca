@@ -16,6 +16,7 @@ COLOR PALETTE:
 
 */
 
+/* STYLES */
 
 * {
     /* BASIC RESET */
@@ -63,18 +64,23 @@ body {
 
 .text-box {
     position: absolute; /* position relative to .header */
-    top: 40%;
+    top: 50%;
     left: 50%; /* % is in relation to parent element */
     transform: translate(-50%, -50%); /* % in relation with to the element itself (this .text-box) */
-    text-align: center;
+    text-align: center; /* to center all text and A tags in this div */
     
 }
 
 .heading-primary {
     color: #fff;
+    margin-bottom: 60px; /* make some space after this h1 group of spans and the A tag button after it */   
+    
     /* ANIMATIONS */
     animation-name: transparentFadeIn; /* Selecting custom animations from @keyframes in this css */
     animation-duration: 2.5s; /* duration-speed of the animation */
+    animation-delay: 0.33s; /* wait 1 second before kicking the animation */
+    animation-fill-mode: backwards; /* The animation will apply the values defined in the first relevant keyframe as soon as it is applied to the target, and retain this during the animation-delay period */
+
 }
 
 .heading-primary-main {
@@ -104,6 +110,43 @@ body {
     letter-spacing: 6px;
     line-height: 16px;
     text-transform: uppercase;
+}
+
+/* BUTTONS */
+
+.btn:link,
+.btn:visited { /* :link and :visited are pseudo-class and are used to style element in different states */
+    text-transform: uppercase;
+    text-decoration: none; /* set to 'none' to remove any underline or other text decoration that are applied by default */
+    padding: 15px 40px; /* top & bottom: 15px | left & right: 40px */
+    display: inline-block; /* since A tags are simply text, we make it an inline-block so it takes its own line */
+    border-radius: 100px; /* maximum radius for button, gives a 'pill' shape */
+    transition: all .15s; /* transition: all is the short way of assigning .2s to all transition-like properties, which animate any transition this class will have*/ 
+  
+    /* ANIMATIONS */
+    animation-name: transparentFadeIn; /* Selecting custom animations from @keyframes in this css */
+    animation-duration: 2.5s; /* duration-speed of the animation */
+    animation-delay: 3.33s; /* wait 1 second before kicking the animation */
+    animation-fill-mode: backwards; /* The animation will apply the values defined in the first relevant keyframe as soon as it is applied to the target, and retain this during the animation-delay period */
+
+
+}
+
+.btn-yellow {
+    background-color: #FED731;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.150); /* make the text pop up a little*/
+    color: #fff;
+}
+
+/* BUTTON ANIMATIONS*/
+.btn:hover {
+    transform: translateY(-3px); /* move object up; is animated by transition: all .2s; in btn:hover */
+    box-shadow: 0 10px 20px rgba(0,0,0,.2); /* 0 offset X | 10px offset Y | 20px blur  */
+}
+.btn:active {
+    transform: translateY(-1px); /* move object down from -3 to -1 when clicked */
+    box-shadow: 0 5px 10px rgba(0,0,0,.2); /* this shadow looks closer to the ground */
+    
 }
 
 /* ANIMATIONS */
