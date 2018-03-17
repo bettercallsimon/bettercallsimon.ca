@@ -28,7 +28,6 @@ COLOR PALETTE:
     margin: 0;
     padding: 0;
     box-sizing: inherit; /* makes every elements inherit the box-sizing param we put in the body selector */
-    
     /* border: 1px solid red; */
 }
 
@@ -49,7 +48,7 @@ body {
     box-sizing: border-box; /* note that we used the *{} to makes every elements inherit from this property here */
 }
 
-.homepage__header {
+.header {
     height: 95vh; /* 95% of view height, helped by the html meta tag "viewport" */
     background-image: linear-gradient(to right bottom,rgba(41, 46, 56, 0.85), rgba(23, 26, 32, 0.85)), url(../assets/img/header_bg_simon_champi.jpg);
     background-size: cover; /* whatever the size of the div, it will fit the image inside */
@@ -65,17 +64,17 @@ body {
 
 }
 
-.logo-box {
+.header__logo-box {
     position: absolute; /* position the logo-box div relative to .header + 40px */
     top: 4rem;
     left: 4rem;
 }
 
-.logo {
+.header__logo {
     height: 10rem; /* define logo image size */
 }
 
-.text-box {
+.header__text-box {
     position: absolute; /* position relative to .header */
     top: 50%;
     left: 50%; /* % is in relation to parent element */
@@ -96,7 +95,7 @@ body {
 
 }
 
-.heading-primary-main {
+.heading-primary--main {
     text-transform: uppercase;
     display: block; /* since span element by default are inline, we change to block so it occupy the whole width and break the line for the next element */ 
     font-size: 2rem;
@@ -106,7 +105,7 @@ body {
     
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
     color: #FED731;
     display: block; 
     font-size: 8rem;
@@ -150,7 +149,7 @@ body {
 
 }
 
-.btn-yellow {
+.btn--yellow {
     background-color: #FED731;
     text-shadow: .1rem .1rem rgba(0, 0, 0, 0.150); /* make the text pop up a little*/
     color: #fff;
@@ -164,7 +163,6 @@ body {
 .btn:active {
     transform: translateY(-0.1rem); /* move object down from -3 to -1 when clicked */
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.2); /* this shadow looks closer to the ground */
-    
 }
 
 /* ANIMATIONS */
