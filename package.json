@@ -1,0 +1,23 @@
+{
+  "name": "bettercallsimon.ca",
+  "version": "1.0.0",
+  "description": "html template for bettercallsimon.ca",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bettercallsimon/bettercallsimon.ca.git"
+  },
+  "author": "Simon Charette",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bettercallsimon/bettercallsimon.ca/issues"
+  },
+  "homepage": "https://github.com/bettercallsimon/bettercallsimon.ca#readme",
+  "devDependencies": {
+    "node-sass": "^4.8.3"
+  },
+  "dependencies": {}
+}
