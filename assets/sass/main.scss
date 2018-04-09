@@ -1,25 +1,19 @@
 /*
 COLOR PALETTE:
-    Light green:    #7ed56f
-    Medium green:   #55c57a
-    Dark green:     #28b485
-
-    Light blue:     #
-    Medium blue:    #
-    Dark blue:      #
 
     Light grey:     #
     Medium grey:    #777
 
-    bg medium gray: #272A33
-    bg dark gray: #21242c
-
-
-    Yellow highlights: #FED731
-
 */
 
 /* STYLES */
+
+//COLOR PALETTE:
+$color-primary-light: #272A33;
+$color-primary-dark: #21242c;
+
+$color-yellow-highlights: #FED731;
+
 
 /* BASIC RESET OF ALL ELEMENTS AND PSEUDO-ELEMENTS*/
 *,
@@ -50,7 +44,7 @@ body {
 
 .header {
     height: 95vh; /* 95% of view height, helped by the html meta tag "viewport" */
-    background-image: linear-gradient(to right bottom,rgba(41, 46, 56, 0.85), rgba(23, 26, 32, 0.85)), url(../assets/img/header_bg_simon_champi.jpg);
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.85), rgba($color-primary-dark, 0.85)), url(../img/header_bg_simon_champi.jpg);
     background-size: cover; /* whatever the size of the div, it will fit the image inside */
     background-position: top; /* make sure the top of the image always stay visible */
     background-color: #272A33;
