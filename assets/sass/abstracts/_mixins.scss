@@ -1,0 +1,10 @@
+//  Mixins!
+
+@mixin clearfix {
+    //creating an ::after pseudo element that will account for the 0 height of the floated elements
+    &::after {
+        content: ""; // making sure it doesnt contain anything visually
+        display: table;
+        clear: both; //both floats left or right
+    }
+}

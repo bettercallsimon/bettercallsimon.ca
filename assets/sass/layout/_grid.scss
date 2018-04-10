@@ -1,0 +1,58 @@
+// this is our own little bootstrap like row/grid system
+
+//body-font size = 10px
+
+.row {
+    max-width: $grid-width; //will try to fill the whole 114rem space, if smaller, will switch to 100% of available space
+    background-color: #eee;
+    margin: 0 auto; //to always center this div in the viewport - 0 top/bottom, auto for left/right (and they'll have the same)
+
+    // adding empty space after every .row, except the .row:last-child pseudo class element
+    &:not(:last-child){
+        margin-bottom: $vertical-grid-gap;
+    }
+
+    // Preparing the clearfix since this grid system is float based
+    @include clearfix; // its a mixin in this case
+
+    //using an attribute selector: ^= means any element with (in this case a class name) starting with "col-" get selected
+    // ^="" start with, *="" contains, $="" ends with
+    // super useful, ex. for special src url, 
+    [class^="col-"] {
+        background-color: orangered;
+        float: left;
+
+        &:not(:last-child) {
+            margin-right: $horizontal-grid-gap;
+        }
+    }
+
+    // nesting
+    .col-1-of-2 {
+        // calc is native to css, its not a sass function. Its calculated during the render of the visual model of the page
+        //to use sass variables in native css calc function we need to use #{ $varName }
+        width: calc(( 100% - #{$horizontal-grid-gap} ) / 2); 
+    }
+
+    .col-1-of-3 {
+        width: calc(( 100% - 2 * #{$horizontal-grid-gap} ) / 3);
+    }
+
+    .col-1-of-4 {
+        width: calc(( 100% - 3 * #{$horizontal-grid-gap} ) / 4); 
+    }
+
+    .col-2-of-3 {
+        width: calc(2 * ((100% - 2 * #{$horizontal-grid-gap} ) / 3) + #{$horizontal-grid-gap}); 
+    }
+
+    .col-2-of-4 {
+        width: calc(2 * ((100% - 3 * #{$horizontal-grid-gap} ) / 4) + #{$horizontal-grid-gap} );
+    }
+
+    .col-3-of-4 {
+        width: calc(3 * ((100% - 3 * #{$horizontal-grid-gap} ) / 4) + 2 * #{$horizontal-grid-gap} );
+    }
+    
+
+}

@@ -1,4 +1,17 @@
 /* STYLES */
+/* ANIMATIONS */
+@keyframes transparentFadeIn {
+  0% {
+    opacity: 0;
+    /* start transparent */
+    transform: translateY(-1rem);
+    /* start up 10px */ }
+  100% {
+    opacity: 1;
+    /* end visible */
+    transform: translate(0);
+    /* end at actual initial position */ } }
+
 /* BASIC RESET OF ALL ELEMENTS AND PSEUDO-ELEMENTS*/
 *,
 *::before,
@@ -15,48 +28,18 @@ html {
   /* since by default browsers has 16px font size but we want our rem units calc from 10px we use % */ }
 
 body {
+  /* Box-sizing makes the browsers calculate the borders and padding as part of the element's width/height */
+  box-sizing: border-box;
+  /* note that we used the *{} to makes every elements inherit from this property here */ }
+
+body {
   /* BASIC RESET, IN BODY FOR INHERITANCE PURPOSES */
   font-family: "Montserrat", sans-serif;
   /* from google fonts */
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
-  color: #777;
-  /* Box-sizing makes the browsers calculate the borders and padding as part of the element's width/height */
-  box-sizing: border-box;
-  /* note that we used the *{} to makes every elements inherit from this property here */ }
-
-.header {
-  height: 95vh;
-  /* 95% of view height, helped by the html meta tag "viewport" */
-  background-image: linear-gradient(to right bottom, rgba(39, 42, 51, 0.85), rgba(20, 22, 27, 0.85)), url(../img/header_bg_simon_champi.jpg);
-  background-size: cover;
-  /* whatever the size of the div, it will fit the image inside */
-  background-position: top;
-  /* make sure the top of the image always stay visible */
-  background-color: #272A33;
-  position: relative;
-  /* makes children div with position absolute count top-left-right-bottom px relative to this parent div */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /* Editing the polygon out of the div (x y, x y, x y...) */ }
-  .header__logo-box {
-    position: absolute;
-    /* position the logo-box div relative to .header + 40px */
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 10rem;
-    /* define logo image size */ }
-  .header__text-box {
-    position: absolute;
-    /* position relative to .header */
-    top: 50%;
-    left: 50%;
-    /* % is in relation to parent element */
-    transform: translate(-50%, -50%);
-    /* % in relation with to the element itself (this .text-box) */
-    text-align: center;
-    /* to center all text and A tags in this div */ }
+  color: #777; }
 
 .heading-primary {
   color: #fff;
@@ -94,10 +77,6 @@ body {
   letter-spacing: .6rem;
   line-height: 1.6rem;
   text-transform: uppercase; }
-
-.homepage__aboutme {
-  height: 30rem;
-  background-color: #272A33; }
 
 /* BUTTONS */
 .btn {
@@ -140,15 +119,66 @@ body {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     /* this shadow looks closer to the ground */ }
 
-/* ANIMATIONS */
-@keyframes transparentFadeIn {
-  0% {
-    opacity: 0;
-    /* start transparent */
-    transform: translateY(-1rem);
-    /* start up 10px */ }
-  100% {
-    opacity: 1;
-    /* end visible */
-    transform: translate(0);
-    /* end at actual initial position */ } }
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    background-color: orangered;
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc(( 100% - 6rem ) / 2); }
+  .row .col-1-of-3 {
+    width: calc(( 100% - 2 * 6rem ) / 3); }
+  .row .col-1-of-4 {
+    width: calc(( 100% - 3 * 6rem ) / 4); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem ) / 3) + 6rem); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 6rem ) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem ) / 4) + 2 * 6rem); }
+
+.header {
+  height: 95vh;
+  /* 95% of view height, helped by the html meta tag "viewport" */
+  background-image: linear-gradient(to right bottom, rgba(39, 42, 51, 0.85), rgba(20, 22, 27, 0.85)), url(../img/header_bg_simon_champi.jpg);
+  background-size: cover;
+  /* whatever the size of the div, it will fit the image inside */
+  background-position: top;
+  /* make sure the top of the image always stay visible */
+  background-color: #272A33;
+  position: relative;
+  /* makes children div with position absolute count top-left-right-bottom px relative to this parent div */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* Editing the polygon out of the div (x y, x y, x y...) */ }
+  .header__logo-box {
+    position: absolute;
+    /* position the logo-box div relative to .header + 40px */
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 10rem;
+    /* define logo image size */ }
+  .header__text-box {
+    position: absolute;
+    /* position relative to .header */
+    top: 50%;
+    left: 50%;
+    /* % is in relation to parent element */
+    transform: translate(-50%, -50%);
+    /* % in relation with to the element itself (this .text-box) */
+    text-align: center;
+    /* to center all text and A tags in this div */ }
+
+.homepage__aboutme {
+  height: 30rem;
+  background-color: #272A33; }

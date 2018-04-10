@@ -8,14 +8,17 @@
 @import "abstracts/mixins";
 @import "abstracts/variables";
 
-@import "base/animation";
-@import "base/base"; //(actually its base/_base.scss but SASS understand that syntax
+@import "base/animations";
+//(actually its base/_base.scss but SASS understand that syntax
+@import "base/base";
 @import "base/typography"; 
 @import "base/utilities"; 
 
 @import "components/buttons";
 
+@import "layout/grid";
 @import "layout/header";
+
 
 @import "pages/home";
 
