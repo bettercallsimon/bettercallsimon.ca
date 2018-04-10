@@ -1,0 +1,50 @@
+body {
+    /* BASIC RESET, IN BODY FOR INHERITANCE PURPOSES */
+    font-family: "Montserrat", sans-serif; /* from google fonts */
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: #777;
+}
+
+.heading-primary {
+    color: #fff;
+    margin-bottom: 6rem; /* make some space after this h1 group of spans and the A tag button after it */   
+    
+    /* ANIMATIONS */
+    animation-name: transparentFadeIn; /* Selecting custom animations from @keyframes in this css */
+    animation-duration: 2.5s; /* duration-speed of the animation */
+    animation-delay: 0.33s; /* wait 1 second before kicking the animation */
+    animation-fill-mode: backwards; /* The animation will apply the values defined in the first relevant keyframe as soon as it is applied to the target, and retain this during the animation-delay period */
+
+    //nesting
+    &--main {
+        text-transform: uppercase;
+        display: block; /* since span element by default are inline, we change to block so it occupy the whole width and break the line for the next element */ 
+        font-size: 2rem;
+        font-weight: 500;
+        letter-spacing: .6rem;
+        line-height: 2rem;
+        
+    }
+    
+    &--sub {
+        color: $color-highlights-yellow;
+        display: block; 
+        font-size: 8rem;
+        font-weight: 600;
+        letter-spacing: .1rem;
+        
+    }
+
+}
+
+.heading-secondary {
+    color: $color-gray-light;
+    display: block; 
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: .6rem;
+    line-height: 1.6rem;
+    text-transform: uppercase;
+}

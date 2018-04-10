@@ -1,0 +1,22 @@
+// Partial scss file, which is why we named it with an underscore for good practices
+// This file contains basics stuff we'll use in the main.scss file and potentially other projects as well
+
+/* BASIC RESET OF ALL ELEMENTS AND PSEUDO-ELEMENTS*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; /* makes every elements inherit the box-sizing param we put in the body selector */
+    /* border: 1px solid red; */
+}
+
+/* root */
+html {
+    font-size: 62.5%; /* since by default browsers has 16px font size but we want our rem units calc from 10px we use % */
+}
+
+body {
+    /* Box-sizing makes the browsers calculate the borders and padding as part of the element's width/height */
+    box-sizing: border-box; /* note that we used the *{} to makes every elements inherit from this property here */
+}

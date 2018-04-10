@@ -1,0 +1,35 @@
+.header {
+    height: 95vh; /* 95% of view height, helped by the html meta tag "viewport" */
+    background-image: linear-gradient(to right bottom, rgba($color-gray-medium, 0.85), rgba($color-gray-dark, 0.85)), url(../img/header_bg_simon_champi.jpg);
+    background-size: cover; /* whatever the size of the div, it will fit the image inside */
+    background-position: top; /* make sure the top of the image always stay visible */
+    background-color: $color-gray-medium;
+    position: relative; /* makes children div with position absolute count top-left-right-bottom px relative to this parent div */
+
+    clip-path: polygon( 0 0, 
+                        100% 0, 
+                        100% 75vh, 
+                        0 100%
+                ); /* Editing the polygon out of the div (x y, x y, x y...) */
+    
+    // SASS Nesting
+    // the "&" replace the parent element, so here, &_logo-box === .header_logo-box
+    &__logo-box {
+        position: absolute; /* position the logo-box div relative to .header + 40px */
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 10rem; /* define logo image size */
+    }
+
+    &__text-box {
+        position: absolute; /* position relative to .header */
+        top: 50%;
+        left: 50%; /* % is in relation to parent element */
+        transform: translate(-50%, -50%); /* % in relation with to the element itself (this .text-box) */
+        text-align: center; /* to center all text and A tags in this div */
+        
+    }
+}

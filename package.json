@@ -22,3 +22,6 @@
   },
   "dependencies": {}
 }
+//terminal command list for this project
+//npm run compile:sass (running with -w so automatically compiling changes)
+//and since its a global tool, just run : live-server from the project root (auto update page when changes occurs)

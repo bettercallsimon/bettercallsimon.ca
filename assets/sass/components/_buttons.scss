@@ -1,0 +1,37 @@
+/* BUTTONS */
+
+.btn {
+    &:link,
+    &:visited { /* :link and :visited are pseudo-class and are used to style element in different states */
+        text-transform: uppercase;
+        text-decoration: none; /* set to 'none' to remove any underline or other text decoration that are applied by default */
+        padding: 1.5rem 4rem; /* top & bottom: 15px | left & right: 40px */
+        display: inline-block; /* since A tags are simply text, we make it an inline-block so it takes its own line */
+        border-radius: 10rem; /* maximum radius for button, gives a 'pill' shape */
+        transition: all .15s; /* transition: all is the short way of assigning .2s to all transition-like properties, which animate any transition this class will have*/ 
+      
+        /* ANIMATIONS */
+        animation-name: transparentFadeIn; /* Selecting custom animations from @keyframes in this css */
+        animation-duration: 2.5s; /* duration-speed of the animation */
+        animation-delay: 2.66s; /* wait 1 second before kicking the animation */
+        animation-fill-mode: backwards; /* The animation will apply the values defined in the first relevant keyframe as soon as it is applied to the target, and retain this during the animation-delay period */
+    
+    
+    }
+    
+    &--yellow {
+        background-color: $color-highlights-yellow;
+        text-shadow: .1rem .1rem rgba($color-black, 0.150); /* make the text pop up a little*/
+        color: $color-white;
+    }
+    
+    /* BUTTON ANIMATIONS*/
+    &:hover {
+        transform: translateY(-0.3rem); /* move object up; is animated by transition: all .2s; in btn:hover */
+        box-shadow: 0 1rem 2rem rgba($color-black,.2); /* 0 offset X | 10px offset Y | 20px blur  */
+    }
+    &:active {
+        transform: translateY(-0.1rem); /* move object down from -3 to -1 when clicked */
+        box-shadow: 0 .5rem 1rem rgba($color-black,.2); /* this shadow looks closer to the ground */
+    }
+}
